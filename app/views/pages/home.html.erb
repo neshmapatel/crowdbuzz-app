@@ -1,0 +1,25 @@
+ <div class="head">  <%= render 'layouts/header' %>
+<h1>Welcome to Crowdbuzz!</h1>
+<% if user_signed_in? %>
+ <p>This is a platform to explore your talents and interest.
+ Crowdbuzz not only allow to explore your talents and interests; but it also allows you to 
+ create a particular event of your choice. 
+ </p>
+  <%= link_to "My events", events_path, :class => 'navbar-link'  %> |
+  <%= link_to "Create event", new_event_path, :class => 'navbar-link'  %>
+
+<%# <%= link_to 'view events', event %>     
+ </div>
+ <% else %>
+  <div class="welcome">
+ <p>This is a platform to explore your talents and interest.
+ Crowdbuzz not only allow to explore your talents and interests; but it also allows you to 
+ create a particular event of your choice. 
+ </p>
+ </div>
+<p>
+Create your events here!!!
+</p>
+<%= link_to 'events creation', new_event_path %>
+
+<% end %>
